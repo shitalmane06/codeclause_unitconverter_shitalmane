@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit Conveter </title>
+<style>
+           
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	background: rgb(191, 193, 194);
+	padding: 20px;
+}
+.container {
+    
+	padding: 32px;
+	border-radius: 20px;
+	max-width: 400px;
+	width: 100%;
+	background: rgba(255, 255, 255, 0);
+	
+}
+.h1{
+
+	text-align: center;
+    
+}
+.container1 {
+	margin-top: 12px;
+	display: flex;
+	flex-direction: column;
+}
+.container1 input {
+	padding: 8px;
+	border-radius: 3px;
+	margin-top: 4px;
+	border: 1px solid rgb(190, 190, 190);
+	
+}
+
+
+
+
+
+
+
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="Container">
+
+            <h1>Unit Conveter</h1><br>
+
+            <div class="container1">
+                <label for="millimeter">Millimeter</label>
+                <input type="number" id="millimeter" placeholder="Millimeter"
+                    oninput="millimeter(parseFloat(this.value))" />
+            </div>
+
+            <div class="container1">
+                <label for="kilometer">Kilometer</label>
+                <input type="number" id="kilometer" placeholder="Kilometer" 
+                onchange="kilometer(parseFloat(this.value))" />
+            </div>
+
+      
+            <div class="container1">
+                <label for="meter">Meter</label>
+                <input type="number" id="meter" placeholder="Meter" 
+                onchange="meter(parseFloat(this.value))" />
+            </div>
+
+
+            <div class="container1">
+                <label for="centimeter">Centimeter</label>
+                <input type="number" id="centimeter" placeholder="Centimeter"
+                    onchange="centimeter(parseFloat(this.value))" />
+            </div>
+
+            
+            
+         
+        </div>
+        <script> 
+
+        const millimeterEl = document.querySelector("#millimeter");
+        const kilometerEl = document.querySelector("#kilometer");
+        const meterEl = document.querySelector("#meter");
+        const centimeterEl = document.querySelector("#centimeter");
+
+        function millimeter(value) {
+	    centimeterEl.value = value / 10;
+	    meterEl.value = value / 1000;
+	    kilometerEl.value = value / 1000000;
+}
+
+        function kilometer(value) {
+	      millimeterEl.value = value * 1000000;
+	      centimeterEl.value = value * 10000;
+	      meterEl.value = value * 1000;
+}
+      
+       function meter(value) {
+	    millimeterEl.value = value * 1000;
+	    centimeterEl.value = value * 100;
+	    kilometerEl.value = value / 1000;
+}
+        
+function centimeter(value) {
+	    millimeterEl.value = value * 10;
+	    meterEl.value = value / 100;
+	    kilometerEl.value = value / 100000;
+}
+       
+      
+           
+   </script>
+    </body>
+</html>
